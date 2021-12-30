@@ -4,8 +4,8 @@ Creating a Layer
 In this tutorial, you will create a layer that draws a `geometry_msgs::Point`_ that is being published on a topic,
 onto an image. The instructions are very similar to the `Creating and Using Plugins (C++)`_ tutorial.
 
-Create a Package
-****************
+1. Create a Package
+*******************
 
 Create a new empty package in your workspace ``src`` directory:
 
@@ -19,8 +19,8 @@ The command:
 * Added code to CMakeLists.txt of the new package, to generate a library called *point_layer*
 * Generated files ``include/geometry_msgs_layers/point_layer.hpp`` and ``src/point_layer.cpp``
 
-Write point_layer.hpp
-*********************
+2. Write point_layer.hpp
+************************
 
 Open the generated ``include/geometry_msgs_layers/point_layer.hpp`` file in your favorite editor,
 and paste the following instead of it:
@@ -52,8 +52,8 @@ and paste the following instead of it:
 Your PointLayer class must inherit the class rqt_image_overlay_layer::Plugin<T> where ``T`` is the msg
 type you are displaying in the layer (ie. ``geometry_msgs::msg::Point``).
 
-Write point_layer.cpp
-*********************
+3. Write point_layer.cpp
+************************
 
 Open the generated ``src/point_layer.cpp`` file in your favorite editor, and paste the following
 instead of it:
@@ -77,12 +77,15 @@ instead of it:
       painter.save();
       QPen pen(Qt::black);
       pen.setCapStyle(Qt::RoundCap);
-      pen.setWidth(30);
+      pen.setWidth(20);
+      painter.setPen(pen);
+      painter.drawPoint(0, 0);
       painter.restore();
 
       painter.save();
-      painter.translate(0, 100);
-      painter.drawText(0, 0, "displaying point!");
+      painter.translate(-30, -20);
+      QString str = "(%1, %2)";
+      painter.drawText(0, 0, str.arg(msg.x).arg(msg.y));
       painter.restore();
     }
 
@@ -107,8 +110,8 @@ The arguments to the ``PLUGINLIB_EXPORT_CLASS`` macro, are:
     The direct parent class ``rqt_image_overlay_layer::Plugin<T>`` cannot be a base
     class for plugins because it is a template class.
 
-Plugin Declaration XML
-**********************
+4. Plugin Declaration XML
+*************************
 
 A `Plugin Declaration XML`_ file must be created to store meta-data about the package.
 
@@ -127,8 +130,8 @@ In the package, create ``plugins.xml`` with the following code:
 
     See `Plugin Declaration XML`_ from the official ROS2 tutorials to get familiar with the XML tags.
 
-CMake Plugin Declaration
-************************
+5. CMake Plugin Declaration
+***************************
 
 `CMake Plugin Declaration`_ is required file for the package to be recognised as an
 rqt_image_overlay_layer plugin.
@@ -150,6 +153,44 @@ In your package's CMakeLists.txt, add a ``pluginlib_export_plugin_description_fi
 
     The first argument to ``pluginlib_export_plugin_description_file`` (ie. ``rqt_image_overlay_layer``)
     is the plugin category your layer belongs to, not the name of your layer.
+
+6. Build and Run
+****************
+
+Navigate back to the root of your workspace, and build your new package:
+
+.. code-block:: console
+
+    colcon build --packages-select geometry_msgs_layers
+
+In a new terminal, source your workspace, and either run rqt, or rqt_image_overlay:
+
+.. code-block:: console
+
+    ros2 run rqt_image_overlay rqt_image_overlay
+
+You should be able to see your new layer when you go to add a layer, as following:
+
+.. image:: images/point_layer.png
+
+7. Testing
+**********
+
+In a fresh terminal, publish a point ``(100.0, 200.0)`` on topic ``/point`` by running:
+
+.. code-block:: console
+
+    ros2 topic pub /point geometry_msgs/msg/Point "
+    x: 100.0
+    y: 200.0
+    z: 0.0"
+
+In rqt_image_overlay, add a geometry_msgs_layer::PointLayer, and set the image topic and
+set the plugin's topic to ``/point``. You should see the point overlayed in the image, as below:
+
+.. image:: images/point_overlayed.png
+
+Congratulations! You now know how to visualize any custom ros msg topic onto an image!
 
 .. _Creating and Using Plugins (C++): https://docs.ros.org/en/rolling/Tutorials/Pluginlib.html
 .. _geometry_msgs::Point: https://github.com/ros2/common_interfaces/blob/master/geometry_msgs/msg/Point.msg
