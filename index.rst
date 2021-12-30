@@ -13,6 +13,7 @@ The project is hosted on `Github`_.
    :maxdepth: 2
 
    installation
-   creating-an-overlay
+   running
+   creating-a-layer
 
 .. _Github: https://github.com/ijnek/rqt_image_overlay
