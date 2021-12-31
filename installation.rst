@@ -6,6 +6,11 @@ Installation
    Instructions here assume that you have and are in a ROS2 workspace's
    root directory.
 
+.. warning::
+
+   This package targets **ROS2 Galactic onwards**. It won't copmile on all ROS1
+   and older ROS2 distros.
+
 Cloning repositories
 ********************
 
