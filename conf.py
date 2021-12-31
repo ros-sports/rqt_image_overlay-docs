@@ -28,7 +28,8 @@ author = 'Kenji Brameld'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-  'sphinx_copybutton'
+  'sphinx_copybutton',
+  'sphinx.ext.autosectionlabel'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

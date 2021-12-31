@@ -1,13 +1,13 @@
 Running
 #######
 
-You have the option of Running RQt Image Overlay as:
+You have the option of Running RQt Image Overlay as either a:
 
-#. a standalone application
-#. a widget in RQt
+#. :ref:`Standalone Application`
+#. :ref:`RQt Widget`
 
-Standalone App
-**************
+Standalone Application
+**********************
 
 Open a new terminal, source your setup file, and run the application:
 
