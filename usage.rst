@@ -111,9 +111,9 @@ Showing Image
 
         ros2 topic list -t
 
-    If you see ``/image_raw [sensor_msgs/msg/Image]`` topic in the list of topics, then your camera node is running correctly.
+    Make sure ``/image_raw [sensor_msgs/msg/Image]`` shows up in the list of topics.
 
-Go to the window with the RQt Image Overlay that you opened in :ref:`Opening`.
+Go to the window with the RQt Image Overlay that you opened in the :ref:`Opening` section.
 
 Click on the refresh button to update the list of image topics. Opening the drop-down, you should see all topics detected
 publishing `sensor_msgs/Image`_. In this example, ``/image_raw`` is the only topic listed.

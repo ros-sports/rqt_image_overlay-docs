@@ -40,9 +40,9 @@ and paste the following instead of it:
     class PointLayer : public rqt_image_overlay_layer::Plugin<geometry_msgs::msg::Point>
     {
     protected:
-    void overlay(
-      QImage & layer,
-      const geometry_msgs::msg::Point & msg) override;
+      void overlay(
+        QImage & layer,
+        const geometry_msgs::msg::Point & msg) override;
     };
 
     }  // namespace geometry_msgs_layers
@@ -95,8 +95,8 @@ instead of it:
 
     PLUGINLIB_EXPORT_CLASS(geometry_msgs_layers::PointLayer, rqt_image_overlay_layer::PluginInterface)
 
-The implementation of point_layer.cpp consits of creating a qpainter and drawing a black point with pen width 30,
-and drawing text ("displaying point!") below it.
+The implementation of point_layer.cpp consists of drawing a black point
+and drawing the coordinate as text above it.
 
 The arguments to the ``PLUGINLIB_EXPORT_CLASS`` macro, are:
 
@@ -136,7 +136,7 @@ In the package, create ``plugins.xml`` with the following code:
 `CMake Plugin Declaration`_ is required file for the package to be recognised as an
 rqt_image_overlay_layer plugin.
 
-In your package's CMakeLists.txt, add a ``pluginlib_export_plugin_description_file`` command after
+In your package's CMakeLists.txt, add the ``pluginlib_export_plugin_description_file`` line after
 ``ament_target_dependencies`` as following:
 
 .. code-block::
