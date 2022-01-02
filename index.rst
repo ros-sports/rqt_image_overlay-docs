@@ -23,4 +23,4 @@ The project is hosted on `Github`_.
    usage
    creating-a-layer
 
-.. _Github: https://github.com/ijnek/rqt_image_overlay
+.. _Github: https://github.com/ros-sports/rqt_image_overlay
