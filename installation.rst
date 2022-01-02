@@ -21,8 +21,8 @@ In your ROS2 workspace, clone the repository and it's dependencies:
    git clone --recursive https://github.com/ijnek/rqt_image_overlay.git src/rqt_image_overlay
    vcs import src < src/rqt_image_overlay/dependencies.repos --recursive
 
-Building
-********
+Building from source
+********************
 
 To build the package and its dependencies, in the workspace root directory, run:
 
