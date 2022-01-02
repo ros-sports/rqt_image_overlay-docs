@@ -6,6 +6,13 @@
 RQt Image Overlay
 =================
 
+RQT Image Overlay is an RQt plugin that allows you to easily draw debug information over camera images,
+and view them in RQt.
+
+A plugin-based architecture for the layers makes it effortless to create layers for any ROS2 message type you have.
+
+.. image:: images/preview.gif
+
 The project is hosted on `Github`_.
 
 .. toctree::
