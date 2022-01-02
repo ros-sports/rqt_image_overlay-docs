@@ -1,8 +1,8 @@
 Creating a Layer 
 ################
 
-In this tutorial, you will create a layer that draws a `geometry_msgs::Point`_ that is being published on a topic,
-onto an image. The instructions are very similar to the `Creating and Using Plugins (C++)`_ tutorial.
+In this tutorial, you will create a layer that draws a published `geometry_msgs::Point`_
+onto a published image. The instructions are similar to the `Creating and Using Plugins (C++)`_ tutorial.
 
 1. Create a Package
 *******************
@@ -95,7 +95,7 @@ instead of it:
 
     PLUGINLIB_EXPORT_CLASS(geometry_msgs_layers::PointLayer, rqt_image_overlay_layer::PluginInterface)
 
-The impelementation of point_layer.cpp consits of creating a qpainter and drawing a black point with pen width 30,
+The implementation of point_layer.cpp consits of creating a qpainter and drawing a black point with pen width 30,
 and drawing text ("displaying point!") below it.
 
 The arguments to the ``PLUGINLIB_EXPORT_CLASS`` macro, are:
@@ -186,7 +186,7 @@ In a fresh terminal, publish a point ``(100.0, 200.0)`` on topic ``/point`` by r
     z: 0.0"
 
 In rqt_image_overlay, add a geometry_msgs_layer::PointLayer, and set the image topic and
-set the plugin's topic to ``/point``. You should see the point overlayed in the image, as below:
+set the plugin's topic to ``/point``. You should see the point layer over the image, as below:
 
 .. image:: images/point_overlayed.png
 
