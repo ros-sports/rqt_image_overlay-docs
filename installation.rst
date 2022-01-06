@@ -8,7 +8,7 @@ Installation
 
 .. warning::
 
-   This package targets **ROS2 Galactic onwards**. It won't copmile on all ROS1
+   This package targets **ROS2 Galactic onwards**. It won't compile on all ROS1
    and older ROS2 distros.
 
 Cloning repositories
