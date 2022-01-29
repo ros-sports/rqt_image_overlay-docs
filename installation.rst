@@ -1,6 +1,21 @@
 Installation
 ############
 
+Follow one of the two installation methods below.
+
+Binary Installation
+*******************
+
+The binary installation is currently only available for ROS2 Rolling. Follow the source
+installation if you use ROS2 Foxy or Galactic.
+
+.. code-block:: console
+
+   sudo apt install ros-rolling-rqt-image-overlay
+
+Source Installation
+*******************
+
 .. note::
 
    Instructions here assume that you have and are in a ROS2 workspace's
@@ -12,7 +27,7 @@ Installation
    and older ROS2 distros.
 
 Cloning repositories
-********************
+====================
 
 In your ROS2 workspace, clone the repository and it's dependencies:
 
@@ -22,7 +37,7 @@ In your ROS2 workspace, clone the repository and it's dependencies:
    vcs import src < src/rqt_image_overlay/dependencies.repos --recursive
 
 Building from source
-********************
+====================
 
 To build the package and its dependencies, in the workspace root directory, run:
 
