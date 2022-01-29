@@ -7,7 +7,7 @@ Binary Installation
 *******************
 
 The binary installation is currently only available for ROS2 Rolling. Follow the source
-installation if you use ROS2 Foxy or Galactic.
+installation if you use ROS2 Galactic.
 
 .. code-block:: console
 
