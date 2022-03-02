@@ -1,46 +1,37 @@
 Installation
 ############
 
-Follow one of the two installation methods below.
+Follow one of the two installation methods below:
 
-Binary Installation
-*******************
-
-The binary installation is currently only available for ROS2 Rolling. Follow the source
-installation if you use ROS2 Galactic.
-
-.. code-block:: console
-
-   sudo apt install ros-rolling-rqt-image-overlay
-
-Source Installation
-*******************
-
-.. note::
-
-   Instructions here assume that you have and are in a ROS2 workspace's
-   root directory.
+* :ref:`Binary Installation` - For most ordinary users
+* :ref:`Source Installation` - For maintainers or cutting-edge users of RQt Image Overlay
 
 .. warning::
 
-   This package targets **ROS2 Galactic onwards**. It won't compile on all ROS1
-   and older ROS2 distros.
+   RQt Image Overlay is available for **ROS2 Galactic onwards**. It won't compile on older
+   ROS2 distros and all ROS1 distros.
 
-Cloning repositories
-====================
+.. tabs::
 
-In your ROS2 workspace, clone the repository and it's dependencies:
+   .. tab:: Binary Installation
 
-.. code-block:: console
+      Source ROS2, and then run:
 
-   git clone --recursive https://github.com/ros-sports/rqt_image_overlay.git src/rqt_image_overlay
-   vcs import src < src/rqt_image_overlay/dependencies.repos --recursive
+      .. code-block:: console
 
-Building from source
-====================
+         sudo apt install ros-${ROS_DISTRO}-rqt-image-overlay
 
-To build the package and its dependencies, in the workspace root directory, run:
+   .. tab:: Source Installation
 
-.. code-block:: console
+      In your ROS2 workspace, clone the repository and it's dependencies:
 
-   colcon build
+      .. code-block:: console
+
+         git clone --recursive https://github.com/ros-sports/rqt_image_overlay.git src/rqt_image_overlay
+         vcs import src < src/rqt_image_overlay/dependencies.repos --recursive
+
+      In the same directory, build the package and its dependencies by running:
+
+      .. code-block:: console
+
+         colcon build

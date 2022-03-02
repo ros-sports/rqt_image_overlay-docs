@@ -10,98 +10,98 @@ Opening
 
 You have the option of Running RQt Image Overlay as either a:
 
-* :ref:`Standalone Application`
-* :ref:`RQt Widget`
+* Standalone Application
+* RQt Widget
 
-Standalone Application
-======================
+.. tabs::
 
-Open a new terminal and run the application:
+    .. tab:: RQt Widget
 
-.. code-block:: console
+        Open a new terminal and run RQt:
 
-    ros2 run rqt_image_overlay rqt_image_overlay
+        .. code-block:: console
 
-You should see a standalone application show up in RQt like below:
+            rqt
 
-.. image:: images/standalone_app.png
+        .. warning::
 
-RQt Widget
-==========
+            If this is the first time opening rqt since you've sourced the setup file, run
+            ``rqt --force-discover`` instead.
 
-Open a new terminal and run RQt:
+        From the menu bar, select ``Plugins > Debugging > Image Overlay``:
 
-.. code-block:: console
+        .. image:: images/selecting_plugin.png
 
-    rqt
+        You should see a dockable widget show up like the following:
 
-.. warning::
+        .. image:: images/plugin_in_rqt.png
 
-    If this is the first time opening rqt since you've sourced the setup file, run
-    ``rqt --force-discover`` instead.
+    .. tab:: Standalone Application
 
-From the menu bar, select ``Plugins > Debugging > Image Overlay``:
+        Open a new terminal and run the application:
 
-.. image:: images/selecting_plugin.png
+        .. code-block:: console
 
-You should see a dockable widget show up like the following:
+            ros2 run rqt_image_overlay rqt_image_overlay
 
-.. image:: images/plugin_in_rqt.png
+        You should see a standalone application show up in RQt like below:
+
+        .. image:: images/standalone_app.png
 
 
-Publishing image
-****************
+Publishing Images
+*****************
 
-For demonstration purposes, you need a node that publishes images on a topic.
+You need a node that publishes images on a topic to display.
 Publish images on a topic using **one of the following**:
 
-* :ref:`V4L2 Node` - Recommended, only works if you have a webcam
-* :ref:`Image Publisher Node`
-* Your own node that publishes images
+* V4L2 Node - Recommended, only works if you have a webcam
+* Image Publisher Node
+* Your own node that publishes images on any topic
 
-V4L2 Node
-=========
+.. tabs::
 
-In this option, you will use the `v4l2_camera`_ package to publish images from your webcam.
-To install the package, run:
+    .. tab:: V4L2 Node
 
-.. code-block:: console
+        In this option, you will use the `v4l2_camera`_ package to publish images from your webcam.
+        To install the package, run:
 
-    sudo apt install ros-${ROS_DISTRO}-v4l2-camera
+        .. code-block:: console
 
-.. tip::
+            sudo apt install ros-${ROS_DISTRO}-v4l2-camera
 
-    ``${ROS_DISTRO}`` gets automatically substituted with the name of your ROS2 distro
-    (eg. rolling, galactic, etc.) if you have sourced your ROS2 installation.
+        .. tip::
 
-To start the v4l2 camera node, run:
+            ``${ROS_DISTRO}`` gets automatically substituted with the name of your ROS2 distro
+            (eg. rolling, galactic, etc.) if you have sourced your ROS2 installation.
 
-.. code-block:: console
+        To start the v4l2 camera node, run:
 
-    ros2 run v4l2_camera v4l2_camera_node
+        .. code-block:: console
 
-Image Publisher Node
-====================
+            ros2 run v4l2_camera v4l2_camera_node
 
-In this option, you will use the `image_publisher`_ package to publish an image file onto a topic.
-To install the package, run:
+    .. tab:: Image Publisher Node
 
-.. code-block:: console
+        In this option, you will use the `image_publisher`_ package to publish an image file onto a topic.
+        To install the package, run:
 
-    sudo apt install ros-${ROS_DISTRO}-image-publisher
+        .. code-block:: console
 
-Before starting the image publisher node, you must have an image to publish.
-In this example, we use an image called test.png in the home directory (ie. ``~/test.png``).
-Replace this with the path to your image file.
+            sudo apt install ros-${ROS_DISTRO}-image-publisher
 
-To start the v4l2 camera node, run:
+        Before starting the image publisher node, you must have an image to publish.
+        In this example, we use an image called test.png in the home directory (ie. ``~/test.png``).
+        Replace this with the path to your image file.
 
-.. code-block:: console
+        To start the image publisher node, run:
 
-    ros2 run image_publisher image_publisher_node ~/test.png
+        .. code-block:: console
 
-Showing Image
-*************
+            ros2 run image_publisher image_publisher_node ~/test.png
+
+Displaying the Images
+*********************
 
 .. tip::
 
@@ -124,6 +124,11 @@ Select the topic ``/image_raw``, you should see the output of your webcam showin
 bottom half of your RQt Image Overlay, as below:
 
 .. image:: images/v4l2_image.png
+
+What's next?
+************
+
+Next, you must create a layer to display your message type. Continue onto :ref:`Creating a Layer`.
 
 .. _v4l2_camera: https://index.ros.org/r/v4l2_camera/
 .. _image_publisher: https://index.ros.org/p/image_publisher/
