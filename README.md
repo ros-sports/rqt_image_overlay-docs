@@ -4,7 +4,7 @@ Repository for maintaining the Sphinx Documentation for the ROS2 Rqt Image Overl
 
 ## Installing Dependencies
 `sudo apt install python3-sphinx-rtd-theme` and
-`pip install sphinx-copybutton`
+`pip install -r requirements.txt`
 
 ## Compiling
 To compile locally, run `make html` in the root directory. 
