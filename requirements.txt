@@ -1,3 +1,4 @@
 sphinx-copybutton
 sphinx-tabs
 sphinx-rtd-theme
+sphinxcontrib-youtube

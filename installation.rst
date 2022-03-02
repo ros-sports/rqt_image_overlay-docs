@@ -3,8 +3,8 @@ Installation
 
 Follow one of the two installation methods below:
 
-* :ref:`Binary Installation` - For most ordinary users
-* :ref:`Source Installation` - For maintainers or cutting-edge users of RQt Image Overlay
+* Binary Installation - For most ordinary users
+* Source Installation - For maintainers or cutting-edge users of RQt Image Overlay
 
 .. warning::
 

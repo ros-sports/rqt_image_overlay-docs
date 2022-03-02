@@ -5,6 +5,8 @@ Usage
 
     Remember to source your workspace with ``. install/local_setup.bash``
 
+.. _opening:
+
 Opening
 *******
 
@@ -31,10 +33,12 @@ You have the option of Running RQt Image Overlay as either a:
         From the menu bar, select ``Plugins > Debugging > Image Overlay``:
 
         .. image:: images/selecting_plugin.png
+            :align: center
 
         You should see a dockable widget show up like the following:
 
         .. image:: images/plugin_in_rqt.png
+            :align: center
 
     .. tab:: Standalone Application
 
@@ -47,6 +51,7 @@ You have the option of Running RQt Image Overlay as either a:
         You should see a standalone application show up in RQt like below:
 
         .. image:: images/standalone_app.png
+            :align: center
 
 
 Publishing Images
@@ -119,11 +124,13 @@ Click on the refresh button to update the list of image topics. Opening the drop
 publishing `sensor_msgs/Image`_. In this example, ``/image_raw`` is the only topic listed.
 
 .. image:: images/image_combo_box.png
+    :align: center
 
 Select the topic ``/image_raw``, you should see the output of your webcam showing in the
 bottom half of your RQt Image Overlay, as below:
 
 .. image:: images/v4l2_image.png
+    :align: center
 
 What's next?
 ************

@@ -29,8 +29,8 @@ author = 'Kenji Brameld'
 # ones.
 extensions = [
   'sphinx_copybutton',
-  'sphinx.ext.autosectionlabel',
-  'sphinx_tabs.tabs'
+  'sphinx_tabs.tabs',
+  'sphinxcontrib.youtube'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

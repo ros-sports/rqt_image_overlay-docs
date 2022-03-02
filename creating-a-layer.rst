@@ -1,3 +1,5 @@
+.. _Creating a Layer:
+
 Creating a Layer 
 ################
 
@@ -172,6 +174,7 @@ In a new terminal, source your workspace, and either run rqt, or rqt_image_overl
 You should be able to see your new layer when you go to add a layer, as following:
 
 .. image:: images/point_layer.png
+  :align: center
 
 7. Testing
 **********
@@ -189,6 +192,7 @@ In rqt_image_overlay, add a geometry_msgs_layer::PointLayer, and set the image t
 set the plugin's topic to ``/point``. You should see the point layer over the image, as below:
 
 .. image:: images/point_overlayed.png
+  :align: center
 
 Congratulations! You now know how to visualize any custom ros msg topic onto an image!
 

@@ -12,6 +12,7 @@ camera image and view them in RQt**.
 GIFs are worth a thousand words!, so:
 
 .. image:: images/preview.gif
+   :align: center
 
 In case you didn’t quite get what’s going on, what you see is three layer plugins that are 
 listening to three user-defined msg topics being toggled on and off.
@@ -46,5 +47,7 @@ The project is hosted on `Github`_ by ROS Sports. **Issues and Pull Requests are
    installation
    usage
    creating-a-layer
+   timestamp-synchronization
+   image-transports
 
 .. _Github: https://github.com/ros-sports/rqt_image_overlay
