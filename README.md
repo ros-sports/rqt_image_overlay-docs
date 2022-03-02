@@ -3,7 +3,6 @@
 Repository for maintaining the Sphinx Documentation for the ROS2 Rqt Image Overlay package.
 
 ## Installing Dependencies
-`sudo apt install python3-sphinx-rtd-theme` and
 `pip install -r requirements.txt`
 
 ## Compiling
