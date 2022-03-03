@@ -29,7 +29,6 @@ Follow one of the two installation methods below:
 
          git clone --recursive https://github.com/ros-sports/rqt_image_overlay.git src/rqt_image_overlay
          rosdep install --from-paths src
-         vcs import src < src/rqt_image_overlay/dependencies.repos --recursive
 
       In the same directory, build the package and its dependencies by running:
 
