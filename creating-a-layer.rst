@@ -43,7 +43,7 @@ and paste the following instead of it:
     {
     protected:
       void overlay(
-        QImage & layer,
+        QPainter & painter,
         const geometry_msgs::msg::Point & msg) override;
     };
 
@@ -69,26 +69,22 @@ instead of it:
     {
 
     void PointLayer::overlay(
-      QImage & layer,
+      QPainter & painter,
       const geometry_msgs::msg::Point & msg)
     {
-      QPainter painter(&layer);
-
       painter.translate(msg.x, msg.y);
 
       painter.save();
-      QPen pen(Qt::black);
+      QPen pen = painter.pen();
       pen.setCapStyle(Qt::RoundCap);
       pen.setWidth(20);
       painter.setPen(pen);
       painter.drawPoint(0, 0);
       painter.restore();
 
-      painter.save();
       painter.translate(-30, -20);
       QString str = "(%1, %2)";
       painter.drawText(0, 0, str.arg(msg.x).arg(msg.y));
-      painter.restore();
     }
 
     }  // namespace geometry_msgs_layers
@@ -105,7 +101,7 @@ The arguments to the ``PLUGINLIB_EXPORT_CLASS`` macro, are:
 1. The fully-qualified type of the layer class, in this case, geometry_msgs_layers::PointLayer.
 2. The fully-qualified type of the base class, this is always rqt_image_overlay_layer::PluginInterface
 
-.. warning::
+.. important::
 
     **The base class is** ``rqt_image_overlay_layer::PluginInterface``, which is a
     non-templated in-direct parent class. 
@@ -128,7 +124,7 @@ In the package, create ``plugins.xml`` with the following code:
     </library>
 
 
-.. note::
+.. tip::
 
     See `Plugin Declaration XML`_ from the official ROS2 tutorials to get familiar with the XML tags.
 
@@ -139,7 +135,7 @@ In the package, create ``plugins.xml`` with the following code:
 rqt_image_overlay_layer plugin.
 
 In your package's CMakeLists.txt, add the ``pluginlib_export_plugin_description_file`` line after
-``ament_target_dependencies`` as following:
+the existing ``ament_target_dependencies`` line as follows:
 
 .. code-block::
 
@@ -151,7 +147,7 @@ In your package's CMakeLists.txt, add the ``pluginlib_export_plugin_description_
 
     pluginlib_export_plugin_description_file(rqt_image_overlay_layer plugins.xml)
 
-.. warning::
+.. important::
 
     The first argument to ``pluginlib_export_plugin_description_file`` (ie. ``rqt_image_overlay_layer``)
     is the plugin category your layer belongs to, not the name of your layer.
@@ -179,17 +175,17 @@ You should be able to see your new layer when you go to add a layer, as followin
 7. Testing
 **********
 
-In a fresh terminal, publish a point ``(100.0, 200.0)`` on topic ``/point`` by running:
+In a fresh terminal, publish a point ``(100.0, 200.0)`` on topic ``point`` by running:
 
 .. code-block:: console
 
-    ros2 topic pub /point geometry_msgs/msg/Point "
+    ros2 topic pub point geometry_msgs/msg/Point "
     x: 100.0
     y: 200.0
     z: 0.0"
 
 In rqt_image_overlay, add a geometry_msgs_layer::PointLayer, and set the image topic and
-set the plugin's topic to ``/point``. You should see the point layer over the image, as below:
+set the plugin's topic to ``point``. You should see the point layer over the image, as below:
 
 .. image:: images/point_overlayed.png
   :align: center

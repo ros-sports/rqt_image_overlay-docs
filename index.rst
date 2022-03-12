@@ -47,6 +47,7 @@ The project is hosted on `Github`_ by ROS Sports. **Issues and Pull Requests are
    installation
    usage
    creating-a-layer
+   changing-the-layer-color
    timestamp-synchronization
    image-transports
 
