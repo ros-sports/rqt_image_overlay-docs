@@ -13,7 +13,7 @@ Create a new empty package in your workspace ``src`` directory:
 
 .. code-block:: console
 
-    ros2 pkg create --build-type ament_cmake geometry_msgs_layers --dependencies rqt_image_overlay_layer geometry_msgs --library-name point_layer
+    ros2 pkg create geometry_msgs_layers --build-type ament_cmake --dependencies rqt_image_overlay_layer geometry_msgs --library-name point_layer
 
 The command:
 
