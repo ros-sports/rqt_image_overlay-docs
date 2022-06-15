@@ -27,7 +27,7 @@ Follow one of the two installation methods below:
 
       .. code-block:: console
 
-         git clone https://github.com/ros-sports/rqt_image_overlay.git src/rqt_image_overlay
+         git clone https://github.com/ros-sports/rqt_image_overlay.git src/rqt_image_overlay --branch ${ROS_DISTRO}
          rosdep install --from-paths src
 
       In the same directory, build the package and its dependencies by running:
