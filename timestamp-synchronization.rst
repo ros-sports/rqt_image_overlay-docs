@@ -1,3 +1,5 @@
+.. _Timestamp Synchronization:
+
 Timestamp Synchronization
 #########################
 
@@ -33,7 +35,7 @@ they match those of the incoming images.
 
 Since messages arrive after the image, we must allow some time for messages to be collected before
 composing the overlay image and displaying it. This waiting time is called the waiting window, and
-is 0.3 seconds by default.
+is **0.3 seconds by default, but can be modified in** :ref:`Configurations`.
 
 Note that message_filter's TimeSynchronizer is not used due to its shortcomings:
 
@@ -46,7 +48,7 @@ window, the overlay is simply not drawn. If for example, you don't detect a cert
 image, you can not send a message on the topic, and the synchronization will work fine.
 
 
-The following video shows the ball bounding box matches the images perfectly, when 
+The following video shows the ball bounding box matches the images perfectly, when
 **timestamp synchronization** is being used.
 
 .. youtube:: 1OHLSWl-JzM

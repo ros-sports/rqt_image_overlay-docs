@@ -50,5 +50,6 @@ The project is hosted on `Github`_ by ROS Sports. **Issues and Pull Requests are
    changing-the-layer-color
    timestamp-synchronization
    image-transports
+   configurations
 
 .. _Github: https://github.com/ros-sports/rqt_image_overlay
