@@ -1,10 +1,12 @@
 .. _Creating a Layer:
 
-Creating a Layer 
+Creating a Layer
 ################
 
 In this tutorial, you will create a layer that draws a published `geometry_msgs::Point`_
 onto a published image. The instructions are similar to the `Creating and Using Plugins (C++)`_ tutorial.
+
+.. seealso:: :ref:`Examples` for more examples of packages implementing the layer.
 
 1. Create a Package
 *******************
@@ -104,7 +106,7 @@ The arguments to the ``PLUGINLIB_EXPORT_CLASS`` macro, are:
 .. important::
 
     **The base class is** ``rqt_image_overlay_layer::PluginInterface``, which is a
-    non-templated in-direct parent class. 
+    non-templated in-direct parent class.
     The direct parent class ``rqt_image_overlay_layer::Plugin<T>`` cannot be a base
     class for plugins because it is a template class.
 
