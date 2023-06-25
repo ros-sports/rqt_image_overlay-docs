@@ -14,7 +14,7 @@ GIFs are worth a thousand words!, so:
 .. image:: images/preview.gif
    :align: center
 
-In case you didn’t quite get what’s going on, what you see is three layer plugins that are
+In case you didn't quite get what's going on, what you see is three layer plugins that are
 listening to three user-defined msg topics being toggled on and off.
 
 You can effortlessly write your own plugins for RQt Image Overlay to display your custom msg type.
@@ -32,8 +32,8 @@ the resulting image. This method had several disadvantages:
 * Inability to toggle layers on/off
 * Had to write code to subscribe to the topics and image
 * Had to write code tp publish the output image
-* Can’t easily reuse the code to draw a certain msg type between projects
-* Have to recompile to add/remove layers, can’t do this during runtime
+* Can't easily reuse the code to draw a certain msg type between projects
+* Have to recompile to add/remove layers, can't do this during runtime
 
 We're happy you're here!
 ************************
